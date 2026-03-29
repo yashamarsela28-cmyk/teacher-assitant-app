@@ -1,38 +1,18 @@
-/* Smooth animated gradient background */
+/* FORCE background image */
 body {
-  background: linear-gradient(-45deg, #0f1117, #1a1f35, #1e2235, #0f1117);
-  background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
+  background-image: url("") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
-/* Floating glow effect */
+/* Dark overlay for readability */
 body::after {
   content: "";
   position: fixed;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(108,99,255,0.25), transparent 70%);
-  top: -150px;
-  left: -150px;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
   z-index: 0;
-  filter: blur(80px);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,101,132,0.2), transparent 70%);
-  bottom: -150px;
-  right: -150px;
-  z-index: 0;
-  filter: blur(80px);
-}
-
-/* Animation */
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  pointer-events: none;
 }
